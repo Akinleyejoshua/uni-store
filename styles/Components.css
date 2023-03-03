@@ -220,6 +220,8 @@ textarea::placeholder {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+        color: black;
+
 }
 
 .sidebar button:hover {
