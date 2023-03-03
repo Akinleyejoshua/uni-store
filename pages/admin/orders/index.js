@@ -58,7 +58,7 @@ const Order = () => {
                                     <div className="space-2"></div>
 
                                     <div className="flex">
-                                        <p className="flex blue"><b>${items.total}</b></p>
+                                        <p className="flex blue"><b>₦{items.total}</b></p>
                                         <div className="space-2"></div>
                                         <p>email - <b>{items.email}</b></p>
                                     </div>
