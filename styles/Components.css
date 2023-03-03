@@ -220,8 +220,7 @@ textarea::placeholder {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-        color: black;
-
+    color: black;
 }
 
 .sidebar button:hover {
@@ -240,6 +239,7 @@ textarea::placeholder {
     margin-left: 1rem;
     text-transform: lowercase;
     text-transform: uppercase;
+    color: black;
     /* font-size: 13px; */
 }
 
@@ -335,6 +335,7 @@ textarea::placeholder {
     margin-left: .5rem;
     background: transparent;
     display: flex;
+    color: rgba(0, 0, 0, 0.279);
 }
 
 .header .menu-btn {
@@ -960,7 +961,7 @@ header.home-header{
 
 .home-header .navlinks a{
     border: 1px solid rgba(0, 0, 0, 0.113);
-   
+    color: rgba(0, 0, 0, 0.279);
     padding: .5rem;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -983,6 +984,8 @@ a:hover{
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    color: rgba(0, 0, 0, 0.279);
+
 }
 
 .search-bar {
@@ -1007,6 +1010,7 @@ input::placeholder{
 }
 
 @media screen and (max-width: 740px) {
+
     .home-header, .admin-header{
         padding: 1rem;
     }
@@ -1018,7 +1022,7 @@ input::placeholder{
     .home-header .navlinks a{
         padding: 0rem;
         border:none;
-        font-size: 18px;
+        font-size: 25px;
     }
 
     header .navbrand *{
