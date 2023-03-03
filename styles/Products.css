@@ -207,7 +207,7 @@ button.cart {
 
 @media screen and (max-width: 740px) {
     .products section{
-        padding: 1rem;
+        padding: 0 1rem;
     }
 
     .products .nav-links button{
@@ -221,7 +221,7 @@ button.cart {
 
     .products .nav{
         flex-direction: column;
-        height: 6.5rem;
+        height: 5rem;
     }
 
     .products button.cart{
@@ -235,5 +235,9 @@ button.cart {
 
     .cart section{
         padding: 1rem;
+    }
+
+    .products .space-1{
+        padding: .25rem;
     }
 }
