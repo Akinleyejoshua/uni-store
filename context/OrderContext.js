@@ -53,7 +53,7 @@ export const OrderContext = () => {
         }))
     }
 
-    const createOrder = (ref) => {
+    const createOrder = async (ref) => {
         addOrder({
             total: totalExchange,
             date: new Date().toLocaleString(),
@@ -78,12 +78,14 @@ export const OrderContext = () => {
                 handleState("error", true);
                 handleState("msg", res.message);
                 handleState("loading", false);
+                return false;
 
             } else {
                 handleState("error", false);
                 handleState("msg", res.message);
                 handleState("loading", false);
                 save("cart", "");
+                return true;
 
             }
         }).catch(err => {
