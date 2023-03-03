@@ -29,7 +29,7 @@ export default function Checkout() {
 
     const [cart, setCart] = useState({
         items: [],
-        total: 0
+        total: 0 
     });
 
     const [tab, setTab] = useState(1);
@@ -53,24 +53,22 @@ export default function Checkout() {
 
     },)
 
-    useEffect(() => {
-        if (msg === "Order placed") {
-            setTab(2)
-        }
-    }, [loading, error])
-
     const config = {
         reference: (new Date()).getTime(),
         email: email,
         amount: totalExchange,
-        publicKey: "pk_test_5b50c65241250e7c803b56c2d35668186e4eb5b2",
+        publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PK,
     };
 
     const handlePaystackSuccessAction = (reference) => {
         // Implementation for whatever you want to do with reference and after success call.
         // console.log(reference);
-        createOrder(reference.reference)
-        handleState("orderNumber", reference.reference)
+
+        createOrder(reference.reference).then(() => {
+            handleState("orderNumber", reference.reference)
+            setTab(2);
+            console.log(1)
+        })
     };
 
     const handlePaystackCloseAction = () => {
@@ -120,7 +118,7 @@ export default function Checkout() {
         <section className='flex justify-between'>
             <div className='total'>
                 <h1>Sub total</h1>
-                <p>${cart?.total}</p>
+                <p>${cart?.total || 0}</p>
             </div>
             <div>
                 <button className='btn cart' onClick={() => router.push("/cart")}>
