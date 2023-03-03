@@ -1,0 +1,99 @@
+.shake {
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
+    animation: shake .1s ease-in;
+    -webkit-animation: shake .5s infinite ease-in;
+}
+
+@keyframes shake {
+
+    from {
+        transform: translateX(0rem);
+        -webkit-transform: translateX(0rem);
+        -moz-transform: translateX(0rem);
+        -ms-transform: translateX(0rem);
+        -o-transform: translateX(0rem);
+    }
+
+    to {
+        transform: translateX(0.25rem);
+        -webkit-transform: translateX(0.25rem);
+        -moz-transform: translateX(0.25rem);
+        -ms-transform: translateX(0.25rem);
+        -o-transform: translateX(0.25rem);
+}
+    
+
+}
+
+.border-red-blink {
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
+    animation: border-red-blink 2.5s ease-in infinite;
+    -webkit-animation: border-red-blink 2.5s ease-in infinite;
+}
+
+@keyframes border-red-blink {
+    to {
+        border: 5px solid rgba(255, 0, 0, 0.5);
+    }
+
+    from {
+        border: 5px solid rgba(255, 0, 0, 0.25);
+
+    }
+}
+
+.border-green-blink {
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
+    animation: border-green-blink 2.5s ease-in infinite;
+    -webkit-animation: border-green-blink 2.5s ease-in infinite;
+}
+
+@keyframes border-green-blink {
+    to {
+        border: 5px solid rgba(58, 208, 17, 0.5);
+    }
+
+    from {
+        border: 5px solid rgba(58, 208, 17, 0.25);
+
+    }
+}
+
+.slow-blink-fade {
+    animation: 1s slowblinkfade infinite;
+    -webkit-animation: 1s slowblinkfade infinite;
+}
+
+@keyframes slowblinkfade {
+    0% {
+        opacity: .8;
+    }
+
+    25% {
+        opacity: .7;
+    }
+
+    50% {
+        opacity: .6;
+    }
+
+    75% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: .8;
+    }
+}

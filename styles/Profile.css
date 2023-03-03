@@ -1,0 +1,209 @@
+.profile .nav {
+    padding: .25rem;
+    display: flex;
+    background: rgb(44, 42, 42);
+    width: max-content;
+    margin: 1rem 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.profile .nav nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile .nav button {
+    padding: .5rem 1rem;
+    background-color: rgb(30, 29, 29);
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.profile .nav button:not(:last-child) {
+    margin-right: .25rem;
+}
+
+.profile .nav button.active, .profile .fixed-btns button.active {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.profile .nav svg {
+    font-size: 20px;
+}
+
+.profile .tab {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    /* height: 100%; */
+    width: 100%;
+    position: relative;
+}
+
+.profile .tab .input {
+    background-color: rgb(46, 44, 44);
+    max-width: 25rem;
+    width: 100%;
+    min-width: 100%;
+}
+
+.profile .input textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    min-height: 10rem;
+    margin-left: .5rem;
+}
+
+.profile .input-bar {
+    margin-bottom: .5rem;
+}
+
+.profile .input-bar.textarea svg {
+    align-self: flex-start;
+    height: max-content;
+}
+
+.profile .input-check {
+    width: 100%;
+}
+
+.profile .input-check small {
+    margin-top: .5rem;
+}
+
+.profile .tab label {
+    font-size: 12px;
+}
+
+.profile .tab button {
+    padding: .5rem 2rem;
+    background-color: royalblue;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+.profile .tab button svg {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile .tab .img {
+    width: max-content;
+}
+
+.profile .tab .avater .name {
+    min-width: 8rem;
+    min-height: 8rem;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    font-size: 4rem;
+}
+
+.profile .tab .input-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: .5rem;
+}
+.profile .tab .input-items .input-bar{
+    max-width: 100%;
+    width: 100%;
+}
+
+.profile .tab .fixed-btns {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: .25rem;
+    background: rgb(44, 42, 42);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.profile .tab .fixed-btns button {
+    padding: .5rem 1rem;
+    background-color: rgb(30, 29, 29);
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin: 0;
+}
+
+.profile .fixed-btns button.active {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.profile .input-bar a, .profile .input-bar p{
+    opacity: .6;
+    font-size: 12px;
+}
+
+.profile .input-bar a{
+    opacity: 1;
+    color: royalblue;
+}
+
+@media screen and (max-width: 640px) {
+    .profile .nav nav {
+        display: grid;
+        grid-gap: .25rem;
+    }
+
+    .profile .nav button {
+        justify-content: flex-start;
+    }
+
+    .profile .nav button:not(:last-child) {
+        margin: 0;
+    }
+
+    .profile .tab {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .profile .tab .input {
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .profile .tab button {
+        padding: .5rem 1rem;
+    }
+
+    .profile .input-bar p{
+        font-size: 12px;
+    }
+
+    .profile .tab .input-items{
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+}

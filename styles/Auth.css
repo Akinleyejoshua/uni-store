@@ -1,0 +1,167 @@
+.auth header {
+    padding: 1rem 3rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.0);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+}
+
+.auth header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth header nav button{
+    padding: .5rem 1rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.auth header button svg{
+    font-size: 20px;
+    margin-right: .5rem;
+}
+
+.auth .nav-brand{
+    cursor: pointer;
+}
+
+.auth main{
+    padding: 5rem 3rem 3rem 3rem;
+}
+
+.auth{
+    background: url(../assets/img/hero-2.jpg);
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+}
+
+.auth section.form{
+    position: absolute;
+    height: 50vh;
+    backdrop-filter: blur(50px);
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.auth form{
+    position: relative;
+    max-width: 25rem;
+    width: 25rem;
+    bottom: -10rem;
+    background-color: rgb(29, 27, 27);
+    padding: 2rem;
+    margin: auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow:  0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.auth form label{
+    font-size: 12px;
+}
+
+.auth form .input-bar{
+    margin-bottom: 1rem;
+}
+
+.auth .welcome{
+    position: absolute;
+    left: 3rem;
+    top: 5rem;
+    font-size: 35px;
+}
+
+.auth .or{
+    margin-top: 1rem;
+}
+
+.auth .no-account, .auth .terms, .auth .forgot-pswd{
+    font-size: 12px;
+    opacity: .8;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: max-content;
+    max-width: 100%;
+}
+
+.auth .account-integrate{
+    display: flex;
+    margin-top: 1rem;
+    /* width: max-content; */
+    justify-content: center;
+}
+
+.auth .account-integrate svg{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.auth .icon:hover{
+    opacity: .6;
+}
+
+.auth .auth-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.auth form.signup{
+    min-width: max-content;
+    min-width: 30rem;
+}
+
+.auth form.signup .input-bar{
+    margin: 0;
+}
+
+.auth form .actions{
+    width: 100%;
+    display: flex;
+}
+
+.auth form .actions button{
+    width: 100%;
+}
+
+@media screen  and (max-width: 840px)
+{
+
+    .auth header{
+        padding: 1rem 1.5rem;
+    }
+
+    .auth form{
+        min-width: auto;
+        max-width: 20rem;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .auth .welcome{
+        font-size: 25px;
+        left: 1.5rem;
+    }
+
+    .auth form.signup{
+        bottom: -5rem;
+        max-width: 20rem;
+        min-width: 20rem;
+    }
+    
+}

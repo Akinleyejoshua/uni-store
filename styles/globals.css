@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Mono:wght@200&display=swap');
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: white;
+    background: rgb(33, 32, 32);
+  }
+}
+
+@media (prefers-color-scheme: white) {
+  html {
+    color-scheme: white;
+  }
+
+  body {
+    color: rgb(33, 32, 32);
+    background: white;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  color-scheme: white;
+  color: rgb(33, 32, 32);
+  background: white;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+section * {
+  font-size: 12px;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.red {
+  color: rgb(249, 99, 99);
+}
+
+.red-thick {
+  color: rgb(249, 99, 99);
+  font-weight: bolder;
+}
+
+.blue {
+  color: royalblue;
+}
+
+.green-bg {
+  background: rgb(9, 205, 9);
+}
+
+.green {
+  color: rgb(9, 205, 9);
+}
+
+*:not(ul, li, ol) {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.center {
+  margin: auto;
+  align-self: center;
+  place-self: center;
+  justify-self: center;
+  justify-content: center;
+}
+
+.space-1 {
+  padding: .5rem;
+}
+
+.space-2 {
+  padding: .25rem;
+}
+
+.h-line {
+  width: 100%;
+  height: .05rem;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.invisible {
+  opacity: 0;
+  padding: 0rem;
+  margin: 0rem;
+  border: none;
+  min-width: 0rem;
+  min-height: 0rem;
+  width: 0rem;
+  height: 0rem;
+  position: fixed;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+}
+
+.items-center {
+  align-items: center;
+  place-items: center;
+  justify-items: center;
+}
+
+.center {
+  margin: auto;
+}
+
+.v-center {
+  margin: auto 0;
+}
+
+.h-center {
+  margin: 0 auto;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.icon {
+  color: white;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+}
+
+.round{
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.items-hero, .items-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.absolute {
+  position: absolute;
+}
+
+a,
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a i,
+.btn i {
+  margin-right: .5rem;
+}
+
+a * {
+  align-self: center;
+}
+
+button * {
+  align-self: center;
+}
+
+html {
+  color-scheme: dark;
+}
+
+a,
+button,
+.btn {
+  position: relative;
+}
+
+a::after,
+button::after,
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+button:disabled {
+  cursor: no-drop
+}
+
+.input-invisible {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
