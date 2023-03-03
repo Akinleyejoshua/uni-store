@@ -31,6 +31,8 @@ const Product = () => {
             <AdminHeader />
             <main>
                 <section className="flex col">
+                        <button onClick={() => router.push("/admin/orders")} className="btn">Orders</button>
+                         <div className="space-2"></div>           
                     <div className="flex justify-between">
                         <button onClick={() => router.push("/admin/products/add-product")} className="btn">Add New</button>
                         <SearchBar />
