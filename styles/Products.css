@@ -45,6 +45,8 @@
     padding: .5rem;
     margin-top: auto;
     border: 1px solid rgba(0, 0, 0, 0.176);
+    color: black;
+
 }
 
 .product-card .content {
@@ -109,6 +111,8 @@ button.cart {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    color: black;
+
 }
 
 .cart-card img , .edit-product img{
@@ -209,6 +213,10 @@ button.cart {
     -o-border-radius: 5px;
     color: black;
 
+}
+
+button * {
+    color: rgba(0, 0, 0, 0.804);
 }
 
 
