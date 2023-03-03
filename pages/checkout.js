@@ -63,7 +63,7 @@ export default function Checkout() {
         reference: (new Date()).getTime(),
         email: email,
         amount: totalExchange,
-        publicKey: process.env.PAYSTACK_PK,
+        publicKey: "pk_test_5b50c65241250e7c803b56c2d35668186e4eb5b2",
     };
 
     const handlePaystackSuccessAction = (reference) => {
