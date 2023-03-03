@@ -40,7 +40,7 @@ export const HomeHeader = () => {
             <FaStoreAlt />
           </a>
           <div className="space-2"></div>
-          <a onClick={() => router.push("/admin/")}>
+          <a onClick={() => router.push("/admin/products")}>
             <AiOutlineDashboard />
           </a>
         </div>
