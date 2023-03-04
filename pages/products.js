@@ -81,7 +81,7 @@ export default function Products() {
         <section className={`${tab === 4 ? "" : "invisible"}`}>
             <h2>Other</h2>
             <div className='space-1'></div>
-            <ProductList items={products?.filter(item => item.category == "Other" || "")} addToCart={(data) => addToCart(data)} />
+            <ProductList items={products?.filter(item => item.category == "Other" || "" || null || undefined)} addToCart={(data) => addToCart(data)} />
         </section>
     </div>
 
