@@ -49,7 +49,7 @@ export const HomeHeader = () => {
             <p>Store</p>
           </a>
           <div className="space-2"></div>
-          <a onClick={() => router.push("/admin/products/add-product")}>
+          <a onClick={() => router.push("/admin/products/")}>
             <AiOutlineDashboard />
             <div className="space-2"></div>
             <p>Admin</p>
