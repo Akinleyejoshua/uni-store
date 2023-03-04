@@ -64,28 +64,10 @@ const Home = () => {
         <div className="main-component">
             <Header toggleSideBar={() => setSideBar(true)} />
             <main>
-                <h1>Welcome Back!, Joshua</h1>
+                <h1>Welcome Back!</h1>
                 <p>Features you can get started with</p>
 
-                <div className="get-started-features">
-                    <div className="items-home">
-                        {state.features.map((item, i) => {
-                            return <div className="item flex" key={i}>
-                                <div className="flex col">
-                                    {item?.icon}
-                                </div>
-                                <div className="space-1"></div>
-                                <div className="flex col content">
-                                    <div className="flex col">
-                                        <h2>{item?.heading}</h2>
-                                        <p>{item?.content}</p>
-                                    </div>
-                                    {item?.button}
-                                </div>
-                            </div>
-                        })}
-                    </div>
-                </div>
+                
 
             </main>
         </div>
