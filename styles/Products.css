@@ -221,6 +221,11 @@ button * {
     color: rgba(0, 0, 0, 0.804);
 }
 
+textarea, select{
+    background: white;
+    color: black
+}
+
 
 @media screen and (max-width: 740px) {
     .products section{
