@@ -85,6 +85,7 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     color: black;
+
 }
 
 .cart .total * {
@@ -216,7 +217,7 @@ button.cart {
 
 }
 
-button * , button svg{
+button * {
     color: rgba(0, 0, 0, 0.804);
 }
 

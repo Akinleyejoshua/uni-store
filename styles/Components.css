@@ -967,7 +967,7 @@ header.home-header {
 }
 
 .home-header .navlinks a {
-    border: 1px solid rgba(0, 0, 0, 0.113);
+    /* border: 1px solid rgba(0, 0, 0, 0.113); */
     color: rgba(0, 0, 0, 0.763);
     padding: .5rem;
     border-radius: 50%;
@@ -1016,6 +1016,75 @@ input::placeholder {
     color: black;
 }
 
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../assets/img/hero-1.jpg);
+    backdrop-filter: blur(10px);
+
+}
+
+.hero * {
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+    backdrop-filter: blur(50px);
+    height: 100%;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 2rem;
+}
+
+.hero-content small {
+    font-size: 1rem;
+}
+
+.hero-content button {
+    padding: 1rem 4rem;
+    /* width: 100%; */
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: transparent;
+    margin: auto;
+}
+
+.gradient-1-bg-welcome {
+    background-color: #3b2872;
+    background-image:
+        radial-gradient(at 0% 0%, rgb(6, 106, 255) 0, transparent 50%),
+        radial-gradient(at 50% 0%, rgb(5, 48, 164) 0, transparent 50%),
+        radial-gradient(at 100% 0%, rgb(7, 9, 13) 0, transparent 50%);
+    height: 100vh;
+    /* transition: 1s; */
+    backdrop-filter: blur(10px);
+}
+
+.home-header {
+    z-index: 100;
+}
+
+.home-header .navlinks a {
+    /* border: 1px solid whitesmoke; */
+    padding: .25rem;
+    border: none;
+    font-size: 15px;
+    align-self: center;
+}
+
 
 @media screen and (max-width: 740px) {
 
@@ -1034,7 +1103,29 @@ input::placeholder {
         font-size: 25px;
     }
 
+    .home-header .navlinks p,
+    .home-header .navlinks a .space-2 {
+        display: none;
+    }
+
     header .navbrand * {
         font-size: 15px;
     }
+
+    .hero-content{
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .hero-content small {
+        font-size: 1rem;
+    }
+    
 }

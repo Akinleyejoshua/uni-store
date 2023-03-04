@@ -144,6 +144,10 @@ button:hover {
   margin: auto;
 }
 
+.text-left{
+  text-align: left;
+}
+
 .v-center {
   margin: auto 0;
 }

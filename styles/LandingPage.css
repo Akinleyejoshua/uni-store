@@ -1,0 +1,66 @@
+.landingpage .home-header *{
+    color: white;
+}
+
+.landingpage .home-header{
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.landingpage .home-header .navlinks a{
+    /* border: 1px solid whitesmoke; */
+    padding: .25rem;
+    border: none;
+    font-size: 15px;
+    align-self: center;
+}
+
+.landingpage section{
+    padding: 3rem;
+    text-align: center;
+
+}
+
+.landingpage section.about p {
+    font-size: 1rem;    
+}
+
+.landingpage section h1{
+    color: royalblue;
+    margin-bottom: 3rem;
+}
+
+.landingpage section h2{
+    color: royalblue;
+    font-size: 1.5rem;
+}
+
+.landingpage section.about img{
+    max-width: 40rem;
+    max-height: 30rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.landingpage section li{
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 740px){
+    section.about img, section.about .space-1{
+        display: none;
+    }
+
+    section.about p{
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .landingpage section{
+        padding: 1rem;
+    }
+}

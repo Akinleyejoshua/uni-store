@@ -19,29 +19,40 @@ export const HomeHeader = () => {
     <header className="home-header">
       <nav className="flex justify-between">
         <div className="navbrand">
-          <a>UNI-STORE</a>
+          <a href="/">UNI-STORE</a>
         </div>
 
         <div className="navlinks flex">
-          <a>
+          <a onClick={() => router.push("/")}>
             <AiOutlineHome />
+            <div className="space-2"></div>
+            <p>Home</p>
           </a>
 
           <div className="space-2"></div>
           <a>
             <AiOutlineInfoCircle />
+            <div className="space-2"></div>
+            <p>About</p>
           </a>
           <div className="space-2"></div>
           <a>
             <AiOutlineContacts />
+            <div className="space-2"></div>
+
+            <p>Contact</p>
           </a>
           <div className="space-2"></div>
           <a onClick={() => router.push("/products")}>
             <FaStoreAlt />
+            <div className="space-2"></div>
+            <p>Store</p>
           </a>
           <div className="space-2"></div>
-          <a onClick={() => router.push("/admin/products")}>
+          <a onClick={() => router.push("/admin/")}>
             <AiOutlineDashboard />
+            <div className="space-2"></div>
+            <p>Admin</p>
           </a>
         </div>
       </nav>
