@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { NumberRange } from "./NumberRange";
 
 export const ProductList = ({ items, addToCart }) => {
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
+
   return (
     <div className={`${items?.length > 3 ? "items-1" : "scrollbar"}`}>
       {items?.map((item, i) => {
@@ -31,7 +34,9 @@ export const ProductList = ({ items, addToCart }) => {
 
             <div className="space-1"></div>
             <div className="flex justify-between">
-              <button>See more</button>
+              <button
+              onClick={() => router.push("/products/"+item._id)}
+              >See more</button>
               <button
                 onClick={(event) => {
                   addToCart({

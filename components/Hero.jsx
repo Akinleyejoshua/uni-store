@@ -5,7 +5,7 @@ export const Hero = () => {
   const router = useRouter();
 
   return (
-    <div className="hero gradient-1-bg-welcom">
+    <div className="hero gradient-1-bg-welcome">
       <div className="hero-content flex col justify-between">
         <div className="center">
           <div>

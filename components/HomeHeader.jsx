@@ -11,9 +11,10 @@ import {
   AiOutlineInfoCircle,
   AiOutlineCustomerService,
   AiOutlineDashboard,
+  AiOutlineShoppingCart,
 } from "react-icons/ai";
 
-export const HomeHeader = () => {
+export const HomeHeader = ({cart}) => {
   const router = useRouter();
   return (
     <header className="home-header">
@@ -23,38 +24,53 @@ export const HomeHeader = () => {
         </div>
 
         <div className="navlinks flex">
-          <a onClick={() => router.push("/")}>
+          <a href="#" onClick={() => router.push("/")}>
             <AiOutlineHome />
             <div className="space-2"></div>
             <p>Home</p>
           </a>
 
           <div className="space-2"></div>
-          <a>
+          <a href="#">
             <AiOutlineInfoCircle />
             <div className="space-2"></div>
             <p>About</p>
           </a>
           <div className="space-2"></div>
-          <a>
+          <a href="#">
             <AiOutlineContacts />
             <div className="space-2"></div>
 
             <p>Contact</p>
           </a>
           <div className="space-2"></div>
-          <a onClick={() => router.push("/products")}>
+          <a href="#" onClick={() => router.push("/products")}>
             <FaStoreAlt />
             <div className="space-2"></div>
             <p>Store</p>
           </a>
           <div className="space-2"></div>
-          <a onClick={() => router.push("/admin/products/")}>
+          <a href="#" onClick={() => router.push("/admin/")}>
             <AiOutlineDashboard />
             <div className="space-2"></div>
             <p>Admin</p>
           </a>
+
+          <div className="space-2"></div>
+          <a href="#" onClick={() => router.push("/cart/")} className="flex">
+            <AiOutlineShoppingCart />
+            <div className="space-2"></div>
+            <p>Cart</p>
+          </a>
         </div>
+
+        {/* <div className="nav-actions flex items-center">
+          <button className="flex">
+            <AiOutlineShoppingCart />
+            <div className="space-2"></div>
+            <p>{cart}</p>
+          </button>
+        </div> */}
       </nav>
     </header>
   );
