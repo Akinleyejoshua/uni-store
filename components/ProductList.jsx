@@ -15,8 +15,10 @@ export const ProductList = ({ items, addToCart }) => {
 
     // console.log(decodeJWT(get("cart")));
   }, []);
-
-  const ids = cart?.items?.map((item) => item.id);
+  var ids = [];
+  try {
+    ids = cart?.items?.map((item) => item.id);
+  } catch {}
 
   return (
     <div className={`${items?.length > 3 ? "items-1" : "scrollbar"}`}>
