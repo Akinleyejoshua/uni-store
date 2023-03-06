@@ -29,10 +29,10 @@ export default function ProductData() {
   });
 
   useEffect(() => {
-    setState((state) => ({
-      ...state,
-      cart: decodeJWT(get("cart")),
-    }));
+//     setState((state) => ({
+//       ...state,
+//       cart: decodeJWT(get("cart")),
+//     }));
 
     // console.log(decodeJWT(get("cart")));
   }, []);
