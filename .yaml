@@ -1,0 +1,5 @@
+steps:
+  - name: UNI-STORE
+    env:
+      MONGODB_URI: ${{secrets.MONGODB_URI}}
+      NEXT_PUBLIC_PAYSTACK_PK: ${{secrets.NEXT_PUBLIC_PAYSTACK_PK}}
