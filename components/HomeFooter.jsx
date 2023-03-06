@@ -5,10 +5,8 @@ export const HomeFooter = () => {
         <b>UNI-STORE</b>
         <div className="space-1"></div>
         <p className="text-left">
-          There are many variations of passages of Lorem Ipsum means available,
-          but the majority have suffered alteration in some form, by inject
-          humour, or randomised words which don't look even slightly from the
-          end of believable.
+        connecting you with quality products like books, shoes, cloths and other innovative products in the market system around the world.
+
         </p>
         <div className="space-1"></div>
 
