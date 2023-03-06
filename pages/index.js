@@ -2,9 +2,50 @@ import Head from "next/head";
 import Image from "next/image";
 import { Hero } from "../components/Hero";
 import { HomeHeader } from "../components/HomeHeader";
-import HeroImage from "../assets/img/hero-1.jpg";
+import HeroImage from "../assets/img/about-1.png";
+import { useContext, useEffect, useState } from "react";
+import { Product } from "../components/Product";
+import { GlobalContext } from "../context/GlobalContext";
+import { save } from "../helpers";
+import { encodeJWT } from "../services/user";
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+import { HomeFooter } from "../components/HomeFooter";
 
 export default function Home() {
+  const [state, setState] = useState({});
+
+  const {
+    product: { products },
+  } = useContext(GlobalContext);
+
+  const [cart, setCart] = useState({
+    items: [],
+    total: 0,
+  });
+
+  const addToCart = (data) => {
+    setCart((state) => ({
+      ...state,
+      items: [...state.items, data],
+      total: cart?.items?.reduce((a, b) => {
+        return a + b.price;
+      }, 0),
+    }));
+  };
+
+  useEffect(() => {
+    save("cart", encodeJWT(cart, "24h", 1));
+  }, [cart]);
+
+  const book = products?.filter((item) => item.category === "Book");
+  const cloth = products?.filter((item) => item.category === "Cloth");
+  const shoe = products?.filter((item) => item.category === "Shoe");
+  const other = products?.filter((item) => item.category === "Other");
+
+  const featuredBook = book[Math.floor(Math.random() * book.length)];
+  const featuredCloth = cloth[Math.floor(Math.random() * cloth.length)];
+  const featuredShoe = shoe[Math.floor(Math.random() * shoe.length)];
+
   return (
     <div className="landingpage">
       <Head>
@@ -17,32 +58,30 @@ export default function Home() {
       <Hero />
       <div className="space-1"></div>
       <section className="about">
-        <h1>About us</h1>
+        <div className="center heading">
+          <h1>About us</h1>
+          <p>
+            we sell many categories & varieties of products - shoes, books,
+            eBooks, cloths, wears, electronics & others
+          </p>
+          <small>grab your's now</small>
+          <div className="space-1"></div>
 
-        <div className="space-1"></div>
+          <a href="#">See more</a>
+        </div>
 
         <div className="flex justify-between text-left">
-          
-          <div>
-            <p className="">
-              <h2>Who we are?</h2>
-              There are many variations of passages of Lorem Ipsum means
-              available, but the majority have suffered alteration in some form,
-              by inject humour, or randomised words which don't look even
-              slightly from the end of believable. There are many variations of
-              passages of Lorem Ipsum means available, but the majority have
-              suffered alteration in some form, by inject humour, or randomised
-              words which don't look even slightly from the end of believable.
-              There are many variations of passages of Lorem Ipsum means
-              available, but the majority have suffered alteration in some form,
-              by inject humour, or randomised words which don't look even
-              slightly from the end of believable.
+          <div className="flex col text-left">
+            <h2>Who we are?</h2>
+
+            <p className="text-left">
+              connecting you with quality products like books, shoes, cloths and other innovative products in the market system around the world.
             </p>
-            <ul>
-              <li>Best Seller Award</li>
-              <li>Best Author Award</li>
-              <li>Best Promotion Award</li>
-            </ul>
+            <div className="space-1"></div>
+
+            <li>Best Seller Award</li>
+            <li>Best Author Award</li>
+            <li>Best Promotion Award</li>
           </div>
 
           <div className="space-1"></div>
@@ -51,9 +90,172 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="products">
-      <h1>Products</h1>
+      <section className="products flex col">
+        <div className="center flex col text-center heading">
+          <h1>Featured Products</h1>
+          <p>
+            we sell many categories & varieties of products - shoes, books,
+            eBooks, cloths, wears, electronics & others
+          </p>
+          <small>grab your's now</small>
+          <div className="space-1"></div>
+
+          <a href="#">See more</a>
+        </div>
+
+        <div className="items-1">
+          <div>
+            <div className="flex col product-card-1">
+              <Image src={featuredBook?.image} width={200} height={200} />
+              <h1>{featuredBook?.name}</h1>
+              <small>{featuredCloth?.description}</small>
+
+              <h1>${featuredBook?.regularPrice}</h1>
+              <button href="#" className="btn">
+                See more
+              </button>
+            </div>
+          </div>
+          <div className="flex col">
+            <div className="flex col product-card">
+              <Image src={featuredCloth?.image} width={200} height={200} />
+              <h1>{featuredCloth?.name}</h1>
+              <small>{featuredCloth?.description}</small>
+              <h1>${featuredCloth?.regularPrice}</h1>
+              <button href="#" className="btn">
+                See more
+              </button>
+            </div>
+            <div className="space-1"></div>
+            <div className="flex col product-card">
+              <Image src={featuredShoe?.image} width={200} height={200} />
+              <h1>{featuredShoe?.name}</h1>
+              <small>{featuredCloth?.description}</small>
+
+              <h1>${featuredShoe?.regularPrice}</h1>
+              <button href="#" className="btn">
+                See more
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <section className="products flex col">
+        <div className="center flex col text-center heading">
+          <h1>Products on demand</h1>
+          <p>
+            we sell many categories & varieties of products - shoes, books,
+            eBooks, cloths, wears, electronics & others
+          </p>
+          <small>grab your's now</small>
+          <div className="space-1"></div>
+
+          <a href="#">See more</a>
+        </div>
+
+        <div className="flex items-1">
+          <Product
+            addToCart={(val) => addToCart(val)}
+            item={book[Math.floor(Math.random() * book.length)]}
+          />
+          <Product
+            addToCart={(val) => addToCart(val)}
+            item={cloth[Math.floor(Math.random() * cloth.length)]}
+          />
+          <Product
+            addToCart={(val) => addToCart(val)}
+            item={shoe[Math.floor(Math.random() * shoe.length)]}
+          />
+          <Product
+            addToCart={(val) => addToCart(val)}
+            item={other[Math.floor(Math.random() * other.length)]}
+          />
+        </div>
+      </section>
+
+      <section className="discount">
+        <div className="center flex col text-center heading">
+          <h1>Discounts</h1>
+          <p>
+            we sell many categories & varieties of products - shoes, books,
+            eBooks, cloths, wears, electronics & others
+          </p>
+          <small>grab your's now</small>
+          <div className="space-1"></div>
+
+          <a href="#">See more</a>
+        </div>
+        <div className="items-1">
+          <div className="item text-left">
+            <h2>Best Seller Books</h2>
+            <p>Get UPTO</p>
+            <h1 className="percent">55%</h1>
+            <small>Discount</small>
+          </div>
+          <div className="item text-left">
+            <h2>Best Seller Cloths</h2>
+            <p>Get UPTO</p>
+            <h1 className="percent">33%</h1>
+            <small>Discount</small>
+          </div>
+          <div className="item text-left">
+            <h2>Best Seller Shoes</h2>
+            <p>Get UPTO</p>
+            <h1 className="percent">10%</h1>
+            <small>Discount</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact">
+        <div className="center flex col text-center heading">
+          <h1>Stay In Touch with Our Updates</h1>
+          <p>connect with us through our social media handles</p>
+          <div className="space-1"></div>
+          <div className="flex center">
+            <a href="#">
+              <FaFacebook />
+            </a>
+            <a href="#">
+              <FaTwitter />
+            </a>
+
+            <a href="#">
+              <FaInstagram />
+            </a>
+            <a href="#">
+              <FaTiktok />
+            </a>
+          </div>
+        </div>
+
+        <div className="flex col">
+          <div className="items-1 text-left">
+            <div className="input-bar">
+              <small>First name</small>
+              <div className="input">
+                <input placeholder="First name" />
+              </div>
+            </div>
+            <div className="input-bar">
+              <small>Last name</small>
+              <div className="input">
+                <input placeholder="Last name" />
+              </div>
+            </div>
+            <div className="input-bar">
+              <small>Email</small>
+              <div className="input">
+                <input placeholder="Email" />
+              </div>
+            </div>
+          </div>
+          <div className="space-1"></div>
+          <button className="center">Join now</button>
+        </div>
+      </section>
+      <HomeFooter/>
     </div>
   );
 }
