@@ -24,20 +24,20 @@ export const ProductList = ({ items, addToCart }) => {
         return (
           <div key={i} className="product-card flex col justify-between">
             <div className="img round">
-              <img src={item.image} />
+              <img src={item?.image} />
             </div>
             {/* <div className="space-2"></div> */}
 
             <div className="content">
-              <h1>{item.name}</h1>
-              <p>{item.description}</p>
+              <h1>{item?.name}</h1>
+              <p>{item?.description}</p>
               <h1>
-                ${formatNumber(item.regularPrice)}{" "}
-                <del className="red">${formatNumber(item.salePrice)}</del>
+                ${formatNumber(item?.regularPrice)}{" "}
+                <del className="red">${formatNumber(item?.salePrice)}</del>
               </h1>
               {/* <h1>${item.regularPrice} <del>${item.salePrice}</del></h1> */}
             </div>
-            {!item.downloadable && (
+            {!item?.downloadable && (
               <>
                 <small>Quantity</small>
                 <NumberRange
