@@ -75,7 +75,7 @@
     padding: 0rem 3rem;
 }
 
-.checkout {
+.cart .checkout {
     padding: .5rem;
     border: 1px solid rgba(0, 0, 0, 0.219);
     background: white;
@@ -221,14 +221,13 @@ button * {
     color: rgba(0, 0, 0, 0.804);
 }
 
-textarea, select{
-    background: white;
-    color: black
+.product section{
+    padding: 0 3rem;
 }
 
 
 @media screen and (max-width: 740px) {
-    .products section{
+    .products section, .product section{
         padding: 0 1rem;
     }
 

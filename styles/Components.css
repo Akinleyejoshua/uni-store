@@ -952,6 +952,10 @@ button * {
 .navbrand {
     /* color: white; */
     font-size: 2rem;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header.home-header {
@@ -1021,7 +1025,7 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../assets/img/hero-1.jpg);
+    /* background: url(../assets/img/hero-1.jpg); */
     backdrop-filter: blur(10px);
 
 }
@@ -1032,9 +1036,14 @@ input::placeholder {
 
 .hero-content {
     text-align: center;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(10rem);
     height: 100%;
     width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .hero-content h1 {
@@ -1085,6 +1094,24 @@ input::placeholder {
     align-self: center;
 }
 
+textarea, select{
+    background-color: white;
+    color: black;
+}
+
+.home-footer{
+    text-align: left;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 12px;
+    padding: 3rem;
+}
+
+.home-footer a{
+    justify-content: flex-start;
+}
 
 @media screen and (max-width: 740px) {
 
@@ -1094,13 +1121,7 @@ input::placeholder {
     }
 
     .home-header .navlinks .space-1 {
-        padding: .25rem;
-    }
-
-    .home-header .navlinks a {
-        padding: 0rem;
-        border: none;
-        font-size: 25px;
+        padding: 0.05rem;
     }
 
     .home-header .navlinks p,
@@ -1110,7 +1131,15 @@ input::placeholder {
 
     header .navbrand * {
         font-size: 15px;
+        align-items: center;
     }
+
+    .home-header .navlinks a {
+        padding: 0rem;
+        border: none;
+        font-size: 25px !important;
+    }
+
 
     .hero-content{
         padding: 1rem;
@@ -1126,6 +1155,10 @@ input::placeholder {
     
     .hero-content small {
         font-size: 1rem;
+    }
+
+    .home-footer{
+        padding: 1rem;
     }
     
 }
