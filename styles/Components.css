@@ -1109,7 +1109,7 @@ textarea, select{
     padding: 3rem;
 }
 
-.home-footer a{
+.home-footer .links a{
     justify-content: flex-start;
 }
 
