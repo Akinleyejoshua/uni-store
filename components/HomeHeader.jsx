@@ -50,7 +50,7 @@ export const HomeHeader = ({cart}) => {
             <p>Store</p>
           </a>
           <div className="space-2"></div>
-          <a href="#" onClick={() => router.push("/admin/")}>
+          <a href="#" onClick={() => router.push("/admin/products/add-product")}>
             <AiOutlineDashboard />
             <div className="space-2"></div>
             <p>Admin</p>
