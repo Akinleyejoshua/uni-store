@@ -26,9 +26,9 @@ export default function Products() {
     }
 
     useEffect(() => {
-        const decode = decodeJWT(get("cart"));
+        const decode = get("cart");
         if (decode !== "null" || decode !== null) {
-            setCart(decode);
+            setCart(decodeJWT(decode));
         }
         // console.log(decodeJWT(get("cart")));
     }, []);
