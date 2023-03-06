@@ -3,8 +3,8 @@ import { get } from "../helpers";
 
 const settings = {
 
-	baseURL: 'http://localhost:3000/api',
-	// baseURL: 'https://uni-store.vercel.app/api',
+// 	baseURL: 'http://localhost:3000/api',
+	baseURL: 'https://uni-store.vercel.app/api',
 	headers: {
 		Accept: 'application/json,text/plain,*/*',
 		'Content-Type': 'application/json',
