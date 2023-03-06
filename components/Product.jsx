@@ -6,7 +6,7 @@ export const Product = ({ item, addToCart }) => {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
-//   console.log(item)
+  //   console.log(item)
 
   return (
     <div className={``}>
@@ -20,7 +20,7 @@ export const Product = ({ item, addToCart }) => {
           <h1>{item?.name}</h1>
           <p>{item?.description}</p>
           <h1>
-            ${item?.regularPrice} <del>${item?.salePrice}</del>
+            ${item?.regularPrice} <del className="red">${item?.salePrice}</del>
           </h1>
         </div>
         {!item?.downloadable && (
@@ -39,7 +39,7 @@ export const Product = ({ item, addToCart }) => {
           <button onClick={() => router.push("/products/" + item._id)}>
             See more
           </button>
-          <button
+          {/* <button
             onClick={(event) => {
               addToCart({
                 id: item._id,
@@ -54,7 +54,7 @@ export const Product = ({ item, addToCart }) => {
             }}
           >
             Add to cart
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

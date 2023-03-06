@@ -1,7 +1,8 @@
 import { request } from "../utils/axios";
 
 export const getAllProducts = async (category, tag) => request.get(`/product/get-products/`);
-// export const getAllProducts = async (category, tag) => request.get(`/product/list-product?tags=${tag}&category=${category}`);
+export const getProductById = async (id) => request.get(`/product/get-products?id=${id}`);
+// export const getProductById = async (id, category, tag) => request.get(`/product/get-products?id=${id}&tags=${tag}&category=${category}`);
 
 export const addProduct = async (body) => request.post("/product/add-products", body);
 

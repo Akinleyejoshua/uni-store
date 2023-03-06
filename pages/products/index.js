@@ -5,8 +5,8 @@ import { ProductList } from '../../components/ProductList'
 import { GlobalContext } from '../../context/GlobalContext';
 import { FaCartPlus } from "react-icons/fa";
 import { useRouter } from 'next/router';
-import { encodeJWT } from '../../services/user';
-import { save } from '../../helpers';
+import { decodeJWT, encodeJWT } from '../../services/user';
+import { get, save } from '../../helpers';
 import { HomeHeader } from '../../components/HomeHeader';
 import { SearchBar } from '../../components/SearchBar';
 
@@ -26,9 +26,17 @@ export default function Products() {
     }
 
     useEffect(() => {
-        save("cart", encodeJWT(cart, "24h", 1))
+        setCart(decodeJWT(get("cart")));
+    
+        // console.log(decodeJWT(get("cart")));
+      }, []);
+    
 
-    }, [cart]);
+    useEffect(() => {
+        if (cart.items?.length !== 0) {
+          save("cart", encodeJWT(cart, "24h", 1));
+        }
+      }, [cart]);
 
     const [tab, setTab] = useState(1);
 

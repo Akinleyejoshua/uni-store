@@ -67,8 +67,6 @@ const Home = () => {
                 <h1>Welcome Back!</h1>
                 <p>Features you can get started with</p>
 
-                
-
             </main>
         </div>
 

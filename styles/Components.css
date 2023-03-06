@@ -132,7 +132,7 @@ textarea::placeholder {
 .sidebar {
     /* background-color: black; */
     min-height: 100vh;
-    /* box-shadow:  0 0 50px rgba(0, 0, 0, 0.2); */
+    box-shadow:  0 0 50px rgba(0, 0, 0, 0.05);
     /* background: url(../assets/img/hero-2.jpg); */
 }
 
@@ -550,15 +550,16 @@ textarea::placeholder {
         display: flex;
         background-color: transparent;
         width: 100%;
-        flex: 20;
+        flex: 40;
     }
 
     .sidebar nav {
-        flex: 80;
-        background: rgb(34, 32, 32);
+        flex: 60;
+        background: rgb(255, 255, 255);
         height: 100%;
         border: none;
-        box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+        
 
     }
 
@@ -1094,12 +1095,13 @@ input::placeholder {
     align-self: center;
 }
 
-textarea, select{
+textarea,
+select {
     background-color: white;
     color: black;
 }
 
-.home-footer{
+.home-footer {
     text-align: left;
     background-color: royalblue;
     display: flex;
@@ -1109,7 +1111,7 @@ textarea, select{
     padding: 3rem;
 }
 
-.home-footer .links a{
+.home-footer a {
     justify-content: flex-start;
 }
 
@@ -1141,24 +1143,24 @@ textarea, select{
     }
 
 
-    .hero-content{
+    .hero-content {
         padding: 1rem;
     }
 
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-content p {
         font-size: 1rem;
     }
-    
+
     .hero-content small {
         font-size: 1rem;
     }
 
-    .home-footer{
+    .home-footer {
         padding: 1rem;
     }
-    
+
 }

@@ -30,7 +30,7 @@ export default async function handler (req, res) {
             }).lean();
             return res.status(200).send(products);
     
-        } else if (![id].includes(undefined)) {
+        } else if (![id].includes(undefined)) {            
             const products = await Product.find({
                 _id: id
             }).lean();

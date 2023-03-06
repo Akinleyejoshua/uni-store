@@ -85,7 +85,7 @@ export const SideBar = ({ toggle, closeSideBar }) => {
           </button>
           <button
             className={path === "/stream" ? "active" : ""}
-            onClick={() => go("/stream")}
+            onClick={() => go("/")}
           >
             <AiOutlineUsergroupAdd className="red" />
             <p>Customers</p>

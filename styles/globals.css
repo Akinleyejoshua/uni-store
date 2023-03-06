@@ -270,3 +270,16 @@ button:disabled {
   opacity: 0;
   cursor: pointer;
 }
+
+.items-2{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+.p-y-1{
+  padding: 1rem 0;
+}
+
+.p-y-2{
+  padding: .25rem;
+}

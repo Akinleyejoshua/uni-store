@@ -43,7 +43,7 @@ const Order = () => {
                 </section> */}
                 <div className="space-1"></div>
                 <section>
-                    <h1>Orders</h1>
+                    {/* <h1>Orders</h1> */}
                     <div className="flex col">
                         {orders?.map((items, i) => {
                             return <div className="product-bar col" key={i}>
@@ -58,7 +58,7 @@ const Order = () => {
                                     <div className="space-2"></div>
 
                                     <div className="flex">
-                                        <p className="flex blue"><b>₦{items.total}</b></p>
+                                        <p className="flex blue"><b>${items.total}</b></p>
                                         <div className="space-2"></div>
                                         <p>email - <b>{items.email}</b></p>
                                     </div>

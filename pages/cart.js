@@ -11,7 +11,14 @@ import { useRouter } from 'next/router'
 
 export default function Carts() {
   const { product: { products } } = useContext(GlobalContext);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({});
+
+
+  useEffect(() => {
+    if (cart?.items?.length === 0) {
+      save("cart", encodeJWT(cart, "24h", 1));
+    }
+  }, [cart?.items]);
 
   useEffect(() => {
     setCart(decodeJWT(get("cart")));
@@ -71,8 +78,7 @@ export default function Carts() {
             <div className='space-2'></div>
             <div>
               <p>{item.name}</p>
-              <small>{item.description}</small>
-
+              {/* <small>{item.description}</small> */}
 
             </div>
           </div>
@@ -98,6 +104,8 @@ export default function Carts() {
                 ...state,
                 items: filter.length === 0 ? [] : filter,
               }));
+              
+              save("cart", encodeJWT(cart, "24h", 1));
 
             }}><FaTimes /></button>
             {/* <button className='btn' onClick={event => event.target.parentElement.parentElement.style.display="none"}><FaTimes/></button> */}

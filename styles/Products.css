@@ -125,6 +125,12 @@ button.cart {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    max-height: 3rem;
+    max-width: 3rem;
+    min-height: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .cart-card button.cancle {
@@ -180,6 +186,10 @@ button.cart {
 .product-bar img {
     max-height: 5rem;
     max-width: 5rem;
+    min-height: 5rem;
+    min-width: 5rem;
+    height: 5rem;
+    width: 5rem;
 }
 
 .product-bar {
@@ -225,10 +235,47 @@ button * {
     padding: 0 3rem;
 }
 
+.product img{
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: 50rem;
+    max-width: 100%;
+    max-width: 100%;
+}
+
+.product .actions button{
+    border: 1px solid rgba(0, 0, 0, 0.261);
+    color: black;
+    background-color: transparent;
+    padding: .5rem 3rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.product button svg{
+    font-size: 20px;
+}
+
 
 @media screen and (max-width: 740px) {
     .products section, .product section{
         padding: 0 1rem;
+    }
+
+    .product img{
+        width: 100%;
+    }
+
+    section.product .items-{
+        flex-direction: column;
     }
 
     .products .nav-links button{

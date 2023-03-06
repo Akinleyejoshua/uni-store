@@ -31,13 +31,13 @@ export const HomeHeader = ({cart}) => {
           </a>
 
           <div className="space-2"></div>
-          <a href="#">
+          <a href="#"  onClick={() => router.push("/about")}>
             <AiOutlineInfoCircle />
             <div className="space-2"></div>
             <p>About</p>
           </a>
           <div className="space-2"></div>
-          <a href="#">
+          <a href="#" onClick={() => router.push("/contact")}>
             <AiOutlineContacts />
             <div className="space-2"></div>
 
@@ -50,7 +50,7 @@ export const HomeHeader = ({cart}) => {
             <p>Store</p>
           </a>
           <div className="space-2"></div>
-          <a href="#" onClick={() => router.push("/admin/products/add-product")}>
+          <a href="#" onClick={() => router.push("/admin/")}>
             <AiOutlineDashboard />
             <div className="space-2"></div>
             <p>Admin</p>
