@@ -33,7 +33,7 @@ export default function Products() {
     
 
     useEffect(() => {
-        if (cart.items?.length !== 0) {
+        if (cart?.items?.length !== 0) {
           save("cart", encodeJWT(cart, "24h", 1));
         }
       }, [cart]);
