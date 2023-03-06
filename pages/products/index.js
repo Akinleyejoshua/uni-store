@@ -26,17 +26,19 @@ export default function Products() {
     }
 
     useEffect(() => {
-        setCart(decodeJWT(get("cart")));
-    
+        const decode = decodeJWT(get("cart"));
+        if (decode !== "null" || decode !== null) {
+            setCart(decode);
+        }
         // console.log(decodeJWT(get("cart")));
-      }, []);
-    
+    }, []);
+
 
     useEffect(() => {
         if (cart?.items?.length !== 0) {
-          save("cart", encodeJWT(cart, "24h", 1));
+            save("cart", encodeJWT(cart, "24h", 1));
         }
-      }, [cart]);
+    }, [cart]);
 
     const [tab, setTab] = useState(1);
 
