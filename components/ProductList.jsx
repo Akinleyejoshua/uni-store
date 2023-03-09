@@ -57,7 +57,7 @@ export const ProductList = ({ items, addToCart }) => {
               </button>
 
               {ids?.includes(item._id) ? (
-                <button>Added to cart</button>
+                <button disabled={true}>Added to cart</button>
               ) : (
                 <button
                   onClick={(event) => {

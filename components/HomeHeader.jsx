@@ -13,9 +13,22 @@ import {
   AiOutlineDashboard,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import { get } from "../helpers";
+import { decodeJWT } from "../services/user";
 
-export const HomeHeader = ({cart}) => {
+export const HomeHeader = ({}) => {
   const router = useRouter();
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const decode = get("cart");
+
+    if (decode !== null) {
+      setCart(decodeJWT(decode));
+    }
+  }, []);
+
   return (
     <header className="home-header">
       <nav className="flex justify-between">
@@ -31,7 +44,7 @@ export const HomeHeader = ({cart}) => {
           </a>
 
           <div className="space-2"></div>
-          <a href="#"  onClick={() => router.push("/about")}>
+          <a href="#" onClick={() => router.push("/about")}>
             <AiOutlineInfoCircle />
             <div className="space-2"></div>
             <p>About</p>
@@ -59,8 +72,11 @@ export const HomeHeader = ({cart}) => {
           <div className="space-2"></div>
           <a href="#" onClick={() => router.push("/cart/")} className="flex">
             <AiOutlineShoppingCart />
+            {cart?.items?.length || 0}
+
             <div className="space-2"></div>
             <p>Cart</p>
+            {/* <div className="space-2"></div> */}
           </a>
         </div>
 

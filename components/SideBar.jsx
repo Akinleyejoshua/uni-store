@@ -62,16 +62,16 @@ export const SideBar = ({ toggle, closeSideBar }) => {
         </div> */}
 
         <div className="nav-actions">
-          <button
-            className={path === "/home" ? "active" : ""}
-            onClick={() => go("/home")}
+          {/* <button
+            className={path === "/admin" ? "active" : ""}
+            onClick={() => go("/admin/")}
           >
             <FcHome />
             <p>Home</p>
-          </button>
+          </button> */}
           <button
-            className={path === "/dashboard" ? "active" : ""}
-            onClick={() => go("/dashboard")}
+            className={path === "/admin" ? "active" : ""}
+            onClick={() => go("/admin")}
           >
             <AiOutlinePieChart className="blue" />
             <p>Dashboard</p>
@@ -80,7 +80,7 @@ export const SideBar = ({ toggle, closeSideBar }) => {
             className={path.includes("/admin/orders") ? "active" : ""}
             onClick={() => go("/admin/orders")}
           >
-            <AiOutlineShoppingCart />
+            <AiOutlineShoppingCart className="green"/>
             <p>Orders</p>
           </button>
           <button
@@ -94,14 +94,14 @@ export const SideBar = ({ toggle, closeSideBar }) => {
             className={path === "/admin/products" ? "active" : ""}
             onClick={() => go("/admin/products")}
           >
-            <FaShoppingBag />
+            <FaShoppingBag className="green"/>
             <p>Products</p>
           </button>
           <button
             className={path === "/product" ? "active" : ""}
             onClick={() => go("/products")}
           >
-            <FaStoreAlt />
+            <FaStoreAlt className="blue"/>
             <p>Market</p>
           </button>
           {/* <button

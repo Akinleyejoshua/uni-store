@@ -23,7 +23,7 @@ export const Product = ({ item, addToCart }) => {
             ${item?.regularPrice} <del className="red">${item?.salePrice}</del>
           </h1>
         </div>
-        {!item?.downloadable && (
+        {/* {!item?.downloadable && (
           <>
             <small>Quantity</small>
             <NumberRange
@@ -32,9 +32,9 @@ export const Product = ({ item, addToCart }) => {
               }}
             />
           </>
-        )}
+        )} */}
 
-        <div className="space-1"></div>
+        {/* <div className="space-1"></div> */}
         <div className="flex justify-between">
           <button onClick={() => router.push("/products/" + item._id)}>
             See more
