@@ -7,7 +7,9 @@ import "../styles/Animations.css";
 import "../styles/Profile.css";
 import "../styles/Docs.css";
 import '../styles/Products.css';
+import '../styles/Admin.css';
 import '../styles/globals.css';
+
 
 import { GlobalProvider } from "../context/GlobalContext";
 
