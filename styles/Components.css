@@ -220,6 +220,8 @@ textarea::placeholder {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    color: initial !important;
+
 }
 
 /* 
@@ -244,7 +246,7 @@ textarea::placeholder {
     margin-left: 1rem;
     text-transform: lowercase;
     text-transform: uppercase;
-    /* color: black; */
+    color: rgba(0, 0, 0, 0.5);
     /* font-size: 13px; */
 }
 
