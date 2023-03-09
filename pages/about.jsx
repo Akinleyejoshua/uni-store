@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Hero } from "../components/Hero";
 import { HomeHeader } from "../components/HomeHeader";
 import HeroImage from "../assets/img/about-1.png";
 import { HomeFooter } from "../components/HomeFooter";
+import { CustomHero } from "../components/CustomHero";
 
 export default function About() {
-
   return (
     <div className="landingpage">
       <Head>
@@ -16,7 +15,13 @@ export default function About() {
       </Head>
 
       <HomeHeader />
-      <Hero />
+      <CustomHero
+        children={
+          <div>
+            <h1>About us</h1>
+          </div>
+        }
+      />
       <div className="space-1"></div>
       <section className="about">
         <div className="center heading">

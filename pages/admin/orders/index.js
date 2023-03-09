@@ -41,15 +41,11 @@ const Order = () => {
 
                     </div>
                 </section> */}
-                <div className="space-1"></div>
                 <section>
                     {/* <h1>Orders</h1> */}
                     <div className="flex col">
                         {orders?.map((items, i) => {
                             return <div className="product-bar col" key={i}>
-
-                                <Image src={items.image} alt=""/>
-                                <div className="space-1"></div>
 
                                 <div className="fle">
                                     <p><b>{items.fname} {items.lname}</b> | Order number - <b>{items.orderNumber}</b></p>

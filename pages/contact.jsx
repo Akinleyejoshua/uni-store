@@ -1,9 +1,9 @@
 import Head from "next/head";
 // import Image from "next/image";
-import { Hero } from "../components/Hero";
 import { HomeHeader } from "../components/HomeHeader";
 import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import { HomeFooter } from "../components/HomeFooter";
+import { CustomHero } from "../components/CustomHero";
 
 export default function Contact() {
   return (
@@ -15,7 +15,13 @@ export default function Contact() {
       </Head>
 
       <HomeHeader />
-      <Hero />
+      <CustomHero
+        children={
+          <div>
+            <h1>Contact us</h1>
+          </div>
+        }
+      />
       <div className="space-1"></div>
 
       <section className="contact">
@@ -48,8 +54,8 @@ export default function Contact() {
                 <input placeholder="Full name" />
               </div>
             </div>
-            
-          <div className="space-1"></div>
+
+            <div className="space-1"></div>
 
             <div className="input-bar">
               <small>Email</small>

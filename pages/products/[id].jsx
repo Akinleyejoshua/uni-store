@@ -29,11 +29,14 @@ export default function ProductData() {
   });
 
   useEffect(() => {
-//     setState((state) => ({
-//       ...state,
-//       cart: decodeJWT(get("cart")),
-//     }));
-
+    const decode =  get("cart");
+    if (decode !== null){
+      setState((state) => ({
+        ...state,
+        cart: decodeJWT(get("cart")),
+      }));
+    }
+  
     // console.log(decodeJWT(get("cart")));
   }, []);
 
@@ -143,13 +146,14 @@ export default function ProductData() {
                 ) : (
                   <button disabled={true}>Added to cart</button>
                 )}
-                <div className="space-1"></div>
+                <div className="space-2"></div>
 
                 <button
                   className="btn flex"
-                  onClick={() =>
+                  onClick={(event) =>
                     navigator.clipboard.writeText(window?.location).then(() => {
                       console.log("copied");
+                      event.target.innerHTML = "Copied!";
                     })
                   }
                 >

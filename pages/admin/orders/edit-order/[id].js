@@ -103,7 +103,7 @@ const EditProduct = () => {
                         <div className="items-1">
                             {state?.data?.products?.items?.map((item, i) => {
                                 return <div className="flex" key={i}>
-                                    <Image src={item.img} alt=""/>
+                                    <Image src={item.img} alt="" width={40} height={40}/>
                                     <div className="space-2"></div>
                                     <div className="flex col">
                                         <b>{item.name}</b>

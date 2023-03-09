@@ -27,8 +27,9 @@ export default function Products() {
 
     useEffect(() => {
         const decode = get("cart");
-        if (decode !== "null" || decode !== null) {
-//             setCart(decodeJWT(decode));
+        if (decode !== null) {
+            console.log(decode)
+            setCart(decodeJWT(decode));
         }
         // console.log(decodeJWT(get("cart")));
     }, []);
@@ -36,7 +37,7 @@ export default function Products() {
 
     useEffect(() => {
         if (cart?.items?.length !== 0) {
-            save("cart", encodeJWT(cart, "24h", 1));
+            save("cart", encodeJWT(cart || {}, "24h", 1));
         }
     }, [cart]);
 
@@ -63,11 +64,11 @@ export default function Products() {
             </div>
             <div className='flex '>
                 <SearchBar />
-                <div className='space-1'></div>
+                {/* <div className='space-1'></div>
                 <button onClick={() => router.push("/cart")} className='cart'><FaCartPlus />
                     <div className='space-1'></div>
                     <h3>{cart?.items?.length}</h3>
-                </button>
+                </button> */}
             </div>
 
         </section>
@@ -93,6 +94,8 @@ export default function Products() {
             <div className='space-1'></div>
             <ProductList items={products?.filter(item => item.category == "Other" || "")} addToCart={(data) => addToCart(data)} />
         </section>
+        <div className='space-1'></div>
+    
     </div>
 
 }
