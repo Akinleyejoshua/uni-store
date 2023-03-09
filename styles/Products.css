@@ -2,7 +2,7 @@
     padding: 0rem 3rem;
 }
 
-.products section h2, section h1{
+.products section h2, section h1, .cart h2{
     font-size: 2rem;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .cart .total * {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: royalblue;
 }
 
@@ -227,9 +227,9 @@ button.cart {
 
 }
 
-button * {
+/* button * {
     color: rgba(0, 0, 0, 0.804);
-}
+} */
 
 .product section{
     padding: 0 3rem;

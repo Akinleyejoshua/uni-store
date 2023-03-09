@@ -139,6 +139,8 @@ section.discount .item:hover {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    background-color: white;
+    color: black;
 }
 
 .contact .input-bar{

@@ -1,0 +1,44 @@
+.metrics svg{
+    font-size: 3rem;
+    color: royalblue;
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(65, 105, 225, 0.025);
+    padding: 1rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.metrics .item{
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+.metrics .item:hover{
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+}
+
+.metrics p{
+    font-size: 2rem;
+    text-align: right;
+
+}
+
+.metrics h2{
+    text-align: right;
+}
+
+.metrics-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 1.5rem;
+}

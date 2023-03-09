@@ -22,7 +22,8 @@ export const OrderContext = () => {
         error: false,
         orders: [],
         status: "",
-        shipping: ""
+        shipping: "",
+        total: 0,
     })
     const {
         totalExchange,
@@ -43,7 +44,8 @@ export const OrderContext = () => {
         error,
         orders,
         status,
-        shipping
+        shipping,
+        total,
     } = state;
 
     const handleState = (name, val) => {
@@ -55,8 +57,7 @@ export const OrderContext = () => {
 
     const createOrder = async (ref) => {
         addOrder({
-            total: totalExchange,
-            date: new Date().toLocaleString(),
+                        date: new Date().toLocaleString(),
             orderNumber: ref,
             streetAddress: street,
             apartmentSuit: apartment,
@@ -70,6 +71,7 @@ export const OrderContext = () => {
             city,
             products,
             status,
+            total,
 
         }).then(data => {
             const res = data.data;
@@ -168,5 +170,6 @@ export const OrderContext = () => {
         orders,
         getAllOrders,
         editOrder,
+        total
     }
 }
