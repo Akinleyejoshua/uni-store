@@ -5,7 +5,7 @@ import { ProductList } from '../components/ProductList'
 import { GlobalContext } from '../context/GlobalContext';
 import { FaCartPlus } from "react-icons/fa";
 import { useRouter } from 'next/router';
-import { decodeJWT, encodeJWT } from '../services/user';
+import { addCustomer, decodeJWT, encodeJWT } from '../services/user';
 import { get, save } from '../helpers';
 import { HomeHeader } from '../components/HomeHeader';
 import { PaystackButton } from 'react-paystack';
@@ -22,14 +22,15 @@ export default function Checkout() {
         error,
         loading,
         orderNumber,
-        products
+        products,
+        total
 
     } } = useContext(GlobalContext);
     const router = useRouter();
 
     const [cart, setCart] = useState({
         items: [],
-        total: 0 
+        total: 0
     });
 
     const [tab, setTab] = useState(1);
@@ -46,6 +47,7 @@ export default function Checkout() {
                 .then(res => {
                     const new_rate = res.rates["NGN"]
                     handleState("totalExchange", (cart.total * new_rate) * 100)
+                    handleState("total", (cart.total))
                 }).catch(err => { })
         } catch (err) {
 
@@ -57,8 +59,9 @@ export default function Checkout() {
         reference: (new Date()).getTime(),
         email: email,
         amount: totalExchange,
-        publicKey: 'pk_test_5b50c65241250e7c803b56c2d35668186e4eb5b2',
 //         publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PK,
+        publicKey: 'pk_test_5b50c65241250e7c803b56c2d35668186e4eb5b2',
+
     };
 
     const handlePaystackSuccessAction = (reference) => {
@@ -67,10 +70,29 @@ export default function Checkout() {
 
         createOrder(reference.reference).then(() => {
             handleState("orderNumber", reference.reference)
-            setTab(2);
-            console.log(1)
+            
+        }).then(() => {
+            addCustomer({
+                orders: products?.length,
+                totalSpend: cart?.total,
+                dateRegistered: new Date().toLocaleString(),
+                fname,
+                lname,
+                email,
+                phone,
+                country,
+                region,
+                city,
+                street,
+     
+            }).then((data) => {
+                console.log(data);
+                setTab(2);
+            })
         })
-    };
+        
+    }
+
 
     const handlePaystackCloseAction = () => {
         // implementation for  whatever you want to do when the Paystack dialog closed.
