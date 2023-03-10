@@ -18,9 +18,11 @@ export default function Products() {
         items: [],
         total: 0
     });
+
     const addToCart = (data) => {
         setCart(state => ({
-            ...state, items: [...state.items, data],
+            ...state, 
+            items: [...state.items, data],
             total: cart?.items?.reduce((a, b) => { return a + b.price }, 0)
         }));
     }
@@ -28,8 +30,11 @@ export default function Products() {
     useEffect(() => {
         const decode = get("cart");
         if (decode !== null) {
-            console.log(decode)
-            setCart(decodeJWT(decode));
+            const code = decodeJWT(decode)
+            if (code?.items !== null){
+                setCart(decodeJWT(decode));
+
+            }
         }
         // console.log(decodeJWT(get("cart")));
     }, []);

@@ -29,14 +29,13 @@ export default function ProductData() {
   });
 
   useEffect(() => {
-    const decode =  get("cart");
-    if (decode !== null){
-      setState((state) => ({
-        ...state,
-        cart: decodeJWT(get("cart")),
-      }));
+    const decode = get("cart");
+    if (decode !== null) {
+      const code = decodeJWT(decode);
+      if (!code?.items === null) {
+        setCart(decodeJWT(decode));
+      }
     }
-  
     // console.log(decodeJWT(get("cart")));
   }, []);
 
@@ -81,7 +80,6 @@ export default function ProductData() {
       {Object(state.item).length !== 0 ? (
         <section className="product">
           <h1>
-              
             {state.item[0]?.name} | {state.item[0]?.category}
           </h1>
           <div className="space-1"></div>
@@ -89,7 +87,9 @@ export default function ProductData() {
             <img src={state.item[0]?.image} width={500} height={500} alt="" />
             <div className="space-1"></div>
             <div className="flex col p-y-">
-              <h1>${state.item[0]?.regularPrice} | {state.item[0]?.stockStatus}</h1>
+              <h1>
+                ${state.item[0]?.regularPrice} | {state.item[0]?.stockStatus}
+              </h1>
               <del className="red">${state.item[0]?.salePrice}</del>
               <small>{state.item[0]?.description}</small>
               <div className="space-2"></div>
