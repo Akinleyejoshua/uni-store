@@ -1110,14 +1110,16 @@ select {
     color: black;
 }
 
-.home-footer {
+footer.home-footer {
     text-align: left;
     background-color: royalblue;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     color: white;
     font-size: 12px;
     padding: 3rem;
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
 
 .home-footer a {
@@ -1129,6 +1131,10 @@ select {
     .home-header,
     .admin-header {
         padding: 1rem;
+    }
+
+    .home-footer {
+        flex-direction: column-reverse;
     }
 
     .home-header .navlinks .space-1 {
