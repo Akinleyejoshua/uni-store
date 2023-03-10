@@ -31,7 +31,7 @@ const Admin = () => {
   }, [])
 
   useEffect(() => {
-    const orderitems = orders;
+    const orderitems = orders.filter(item => item.status !== "Complete");
     const productitems = products;
     const totalSales = orders.reduce((a, b) => a + b.total, 0);
     const productSold = orders.filter(item => item.status === "Complete")

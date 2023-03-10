@@ -7,6 +7,7 @@ import { documentToBlob } from "../../../helpers/fileReader";
 import { AdminHeader } from "../../../components/AdminHeader";
 import { SideBar } from "../../../components/SideBar";
 import { useRouter } from "next/router";
+import { deleteProduct } from "../../../services/products";
 
 const Product = () => {
     const router = useRouter();
@@ -58,7 +59,11 @@ const Product = () => {
                                     <div className="flex">
                                         <button onClick={() => router.push(`/admin/products/edit-product/${items._id}`)}>Edit</button>
                                         <div className="space-2"></div>
-                                        <button>Delete</button>
+                                        <button className="red" onClick={(event) => {
+                                            deleteProduct({id: items?._id}).then(data => {
+                                                event.target.innerHTML = "Deleted!"
+                                            })
+                                        }}>Delete</button>
                                     </div>
 
                                 </div>
