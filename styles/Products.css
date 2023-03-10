@@ -171,8 +171,8 @@ button.cart {
 } */
 
 .add-product section button {
-    padding: .5rem;
-    border: 1px solid rgba(0, 0, 0, 0.176);
+    padding: 0rem;
+    border: 0px solid rgba(0, 0, 0, 0.176);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -190,6 +190,15 @@ button.cart {
     min-width: 5rem;
     height: 5rem;
     width: 5rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.product-bar button.red{
+    color: red;
 }
 
 .product-bar {

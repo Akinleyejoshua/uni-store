@@ -20,12 +20,14 @@ import { decodeJWT } from "../services/user";
 export const HomeHeader = ({}) => {
   const router = useRouter();
   const [cart, setCart] = useState([]);
+  const decode = get("cart");
 
   useEffect(() => {
-    const decode = get("cart");
-
     if (decode !== null) {
-      setCart(decodeJWT(decode));
+        const code = decodeJWT(decode)
+        if (code?.items !== null){
+            setCart(decodeJWT(decode));
+        }
     }
   }, []);
 

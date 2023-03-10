@@ -7,7 +7,7 @@ import {
     get, save, splitTime
 } from "../helpers";
 import {
-    decodeJWT, encodeJWT, getUserData, updateUserData as userUpdate
+    decodeJWT, encodeJWT, getCustomers, getUserData, updateUserData as userUpdate
 } from "../services/user";
 
 export const UserContext = () => {
@@ -24,17 +24,8 @@ export const UserContext = () => {
         lname: "",
         email: "",
         password: "",
-        linkedin: "",
-        facebook: "",
-        twitter: "",
-        website: "",
-        youtube: "",
-        discord: "",
-        instagram: "",
-        slack: "",
-        businessName: "",
-        businessLocation: "",
         username: "",
+        error: ""
     })
 
     useEffect(() => {
@@ -65,22 +56,14 @@ export const UserContext = () => {
         })
     }
 
+
+
     const updateUserData = () => {
-        const { 
+        const {
             fname,
             lname,
             email,
             password,
-            linkedin,
-            facebook,
-            twitter,
-            website,
-            youtube,
-            discord,
-            instagram,
-            slack,
-            businessName,
-            businessLocation,
             username, } = state;
 
         userUpdate(_id, {
@@ -88,16 +71,7 @@ export const UserContext = () => {
             lname,
             email,
             password,
-            linkedin,
-            facebook,
-            twitter,
-            website,
-            youtube,
-            discord,
-            instagram,
-            slack,
-            businessName,
-            businessLocation,
+
             username,
         }).then(data => {
             const res = data.data;
@@ -154,63 +128,47 @@ export const UserContext = () => {
         fname,
         lname,
         email,
-        totalAudience,
-        totalViews,
-        totalStream,
-        totalNotification,
-        upvotes,
-        linkedin,
-        facebook,
-        twitter,
-        website,
-        youtube,
-        discord,
-        slack,
-        businessName,
-        businessLocation,
-        subscriptionEndDate,
-        subscriptionPayDate,
-        instagram,
         username,
+        msg, error, passwordError,
     } = stateData;
 
-    const { msg, error, passwordError } = state;
-    const { day } = splitTime(`${subscriptionPayDate}`);
-    const daysLeft = new Date().getDay() - (subscriptionEndDate - day) - 3;
+    const [customers, setCustomers] = useState({
+        items: []
+    })
+
+    const { items } = customers;
+
+    const handleCustomers = (name, val) => {
+        setCustomers(state => ({
+            ...state,
+            [name]: val
+        }))
+    }
+
+    const getAllCustomers = async () => {
+        getCustomers().then(data => {
+            handleCustomers("items", data.data);
+        })
+    }
 
     // console.log(daysLeft);
 
     return {
+        customers: items,
         fname,
         lname,
         email,
         _id,
         loading,
-        totalAudience,
-        totalViews,
-        totalStream,
-        totalNotification,
-        upvotes,
-        linkedin,
-        facebook,
-        twitter,
-        website,
-        youtube,
-        discord,
-        instagram,
-        slack,
-        businessName,
-        businessLocation,
-        subscriptionEndDate,
-        subscriptionPayDate,
         username,
-        daysLeft,
         retrieveUserData,
         handleStateData,
         updateUserData,
         msg,
         error,
         passwordError,
+        handleCustomers,
+        getAllCustomers,
     }
 
 }

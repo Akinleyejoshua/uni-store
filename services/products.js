@@ -7,3 +7,8 @@ export const getProductById = async (id) => request.get(`/product/get-products?i
 export const addProduct = async (body) => request.post("/product/add-products", body);
 
 export const updateProduct = async (body) => { return request.post("/product/edit-product", body)};
+
+
+export async function deleteProduct (body) {
+    return request.delete("/product/delete-product", body);
+}

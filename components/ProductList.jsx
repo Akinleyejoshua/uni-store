@@ -32,7 +32,7 @@ export const ProductList = ({ items, addToCart }) => {
 
             <div className="content">
               <h1>{item?.name}</h1>
-              <p>{item?.description}</p>
+              <p>{item?.shortDescription}</p>
               <h1>
                 ${formatNumber(item?.regularPrice)}{" "}
                 <del className="red">${formatNumber(item?.salePrice)}</del>

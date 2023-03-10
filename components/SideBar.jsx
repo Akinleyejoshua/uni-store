@@ -7,18 +7,13 @@ import {
   AiOutlineUser,
   AiOutlineUsergroupAdd,
 } from "react-icons/ai";
-import {
-  FcHome,
-  FcVideoFile,
-  FcVideoCall,
-  FcMoneyTransfer,
-} from "react-icons/fc";
+
 import { BsRecordCircle } from "react-icons/bs";
 import { Avater } from "./Avater";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { SkelentalLoader } from "./SkelentalLoader";
-import { FaShoppingBag, FaStoreAlt } from "react-icons/fa";
+import { FaDropbox, FaStoreAlt } from "react-icons/fa";
 
 export const SideBar = ({ toggle, closeSideBar }) => {
   const router = useRouter();
@@ -84,8 +79,8 @@ export const SideBar = ({ toggle, closeSideBar }) => {
             <p>Orders</p>
           </button>
           <button
-            className={path === "/stream" ? "active" : ""}
-            onClick={() => go("/")}
+            className={path === "/admin/customers" ? "active" : ""}
+            onClick={() => go("/admin/customers")}
           >
             <AiOutlineUsergroupAdd className="red" />
             <p>Customers</p>
@@ -94,7 +89,7 @@ export const SideBar = ({ toggle, closeSideBar }) => {
             className={path === "/admin/products" ? "active" : ""}
             onClick={() => go("/admin/products")}
           >
-            <FaShoppingBag className="green"/>
+            <FaDropbox className="green"/>
             <p>Products</p>
           </button>
           <button

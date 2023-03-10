@@ -17,3 +17,11 @@ export const getUserData = async (id) => {
 export const updateUserData = async (id, body) => {
    return request.post("/user/" + id, body);
 }
+
+export async function addCustomer (body) {
+   return request.post("/customer/add-customer", body);
+}
+
+export async function getCustomers () {
+   return request.get("/customer/get-customers");
+}
