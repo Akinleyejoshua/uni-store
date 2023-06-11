@@ -22,7 +22,7 @@ export default function Products() {
     const addToCart = (data) => {
         setCart(state => ({
             ...state, 
-            items: [...state.items, data],
+            items: [...state?.items, data],
             total: cart?.items?.reduce((a, b) => { return a + b.price }, 0)
         }));
     }
